@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      Wow! A group generator!
+    </h1>
+    <section>
+      <form>
+        <input type="text" />
+        <textarea id="allNames" name="allNames" rows="5" cols="33">
+Ahmed, Andrei, Georg, Hendra, Lars, Lera, Luis, Marianne‚ Mathieu, Mulugeta, Nevin, Oriane, Robert, Stefan D, Stefan I, Valeriia, Vladyslava</textarea
+        >
+        <br />
+        <label for="groupSize">Name (4 to 8 characters):</label>
+        <input
+          type="text"
+          id="groupSize"
+          name="groupSize"
+          required
+          minlength="4"
+          maxlength="8"
+          size="10"
+        />
+      </form>
+    </section>
+    <div id="group-assignment"></div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
