@@ -62,8 +62,8 @@ function createGroups(shuffledGroup, numberOfGroup, groupSize){
     for (let i = 0; i < shuffledGroup.length; i+=groupSize){
       groups.push(shuffledGroup.slice(i, i + groupSize))
       }
-      // do with 0 but could be a random number index with the number of groups
-      groups[0].push(personLeft); 
+      //I push the person Left in one of the group randomly 
+      groups[Math.floor(Math.random() * numberOfGroup)].push(personLeft); 
     
     console.log("Final groups odds:", groups); 
     return groups
