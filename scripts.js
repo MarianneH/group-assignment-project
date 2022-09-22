@@ -58,11 +58,27 @@ function createGroups(shuffledGroup, numberOfGroup, groupSize){
     shuffledGroup.shift(); 
     console.log("new shuffled group:", shuffledGroup)
     // creates the group with newshuffledGroup
+    console.log("Group size:", groupSize)
+    for (let i = 0; i < shuffledGroup.length; i+=groupSize){
+      groups.push(shuffledGroup.slice(i, i + groupSize))
+      }
+      // do with 0 but could be a random number index with the number of groups
+      groups[0].push(personLeft); 
     
+    console.log("Final groups odds:", groups); 
+    return groups
 
+  } 
+   // if 0 person left devide array in number of group
+  else if (shuffledGroup.length % numberOfGroup === 0){
+    for (let i = 0; i < shuffledGroup.length; i+=groupSize){
+      groups.push(shuffledGroup.slice(i, i + groupSize))
+      }
+      console.log("Final groups even:", groups)
+      return groups
   }
 
-  // if 0 person left devide array in number of group 
+  
 
 }
 
