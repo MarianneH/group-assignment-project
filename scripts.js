@@ -41,10 +41,32 @@ console.log(numberOfGroup(group,groupSize));
  let shuffledGroup = group.sort(function () {
    return Math.random() - 0.5;
  });
- console.log("Shuffled array: ", shuffledGroup);
+// console.log("Shuffled array: ", shuffledGroup);
 
 
+function createGroups(shuffledGroup, numberOfGroup, groupSize){
+    //console.log("Array inside function", shuffledGroup);
+  //console.log("NumberOfGroups inside Fuction: ", numberOfGroup);
+ let personLeft = ""; 
+ let groups = []; 
+  // if 1 person left, put number in person - 1 in number of group + person left in one of the group
+  console.log("Modulo", shuffledGroup.length % numberOfGroup)
+  if (shuffledGroup.length % numberOfGroup === 1){
+    // take the first person of array in personleft and delete it of array; 
+    let personLeft = shuffledGroup[0]; 
+    console.log("Person left:", personLeft); 
+    shuffledGroup.shift(); 
+    console.log("new shuffled group:", shuffledGroup)
+    // creates the group with newshuffledGroup
+    
 
+  }
+
+  // if 0 person left devide array in number of group 
+
+}
+
+console.log(createGroups(shuffledGroup, numberOfGroup(group,groupSize), groupSize));
 
 
 // let group = [
