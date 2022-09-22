@@ -4,32 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>
-      Wow! A group generator!
-    </h1>
+    <h1>Wow! A group generator!</h1>
+    <p>
+      This group generator is simple. List you're people separated by a comma
+      and hit the Shuffle Button.
+    </p>
     <section>
-      <form>
-        <input type="text" />
+      <form id="shuffleGroup" action="#">
+        <label for="allNames">All members:</label>
         <textarea id="allNames" name="allNames" rows="5" cols="33">
 Ahmed, Andrei, Georg, Hendra, Lars, Lera, Luis, Marianne‚ Mathieu, Mulugeta, Nevin, Oriane, Robert, Stefan D, Stefan I, Valeriia, Vladyslava</textarea
         >
         <br />
-        <label for="groupSize">Name (4 to 8 characters):</label>
+        <label for="groupSize">Number of people per group:</label>
         <input
           type="text"
           id="groupSize"
+          placeholder="Group Size"
           name="groupSize"
           required
-          minlength="4"
-          maxlength="8"
           size="10"
         />
+        <button form="shuffleGroup" id="shuffleButton">Let's regroup!</button>
       </form>
     </section>
-    <div id="group-assignment"></div>
+    <section class="result">
+      <div id="group-assignment"></div>
+    </section>
     <script src="scripts.js"></script>
   </body>
 </html>
