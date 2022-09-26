@@ -18,7 +18,8 @@ let group = [
   "Vladyslava",
 ];
 let groupSize = prompt("How many people should be in a group?");
-let arr = [[], [], [], [], [], [], [], []];
+let numberOfGroups;
+let finalGroups = [[]];
 let errorOut;
 let checkI;
 
@@ -26,27 +27,26 @@ let checkI;
 let shuffledGroup = group.sort(function () {
   return Math.random() - 0.5;
 });
-console.log(shuffledGroup);
 
-function createGroups(groupSize) {
-  //define the number of groups
-  let numberOfGroups;
-
+function amountOfGroups(groupSize) {
   //find out if the rest of people is an own group or needs to be distributed
   if (group.length % groupSize <= groupSize / 2) {
-    //bsp 4er gruppe
     numberOfGroups = group.length / groupSize;
-    // = 17/4 = 4,25
     numberOfGroups = numberOfGroups - (numberOfGroups % 1);
-    // 4,25 - (0,25) =4
   } else {
     numberOfGroups = group.length / groupSize;
     numberOfGroups = numberOfGroups - (numberOfGroups % 1) + 1;
-    // 19/4 = 4,75
-    // = 4,75 - 0,75 + 1 = 5
   }
-  //console.log("Number of groups: " + numberOfGroups);
-  //console.log("groupLength: " + group.length);
+
+  //extend empty finalGroups array with necessary empty arrays to fill
+  for (let l = 0; l < numberOfGroups - 1; l++) {
+    finalGroups.push([]);
+  }
+}
+
+function createGroups(groupSize) {
+  amountOfGroups(groupSize);
+
   for (let i = 0; i < group.length; i++) {
     if (i > 0 || i === group.length) {
       //to fix the problem with the loop (missing people or undefined result)
@@ -55,7 +55,6 @@ function createGroups(groupSize) {
     for (let j = 1; j <= numberOfGroups; j++) {
       // NEW CODE - Create Object
       // check if there is value on position i in shuffledGroup & if not, end program
-      //console.log("(inner top loop i = " + i);
 
       if (shuffledGroup[i] === undefined) {
         return;
@@ -63,8 +62,8 @@ function createGroups(groupSize) {
       if (checkI === i) {
         i++;
       }
-      // create array of arrays with all group members
-      arr[j - 1].push(shuffledGroup[i]);
+      // fill groups with members
+      finalGroups[j - 1].push(shuffledGroup[i]);
 
       // Display result in HTML page
       const displayResult = document.createElement("div");
@@ -77,12 +76,9 @@ function createGroups(groupSize) {
         i--;
         errorOut = 1;
       }
-      // if (checkI === i) {
-      //   i++;
-      // }
     }
   }
 }
 
 createGroups(groupSize);
-console.log(arr);
+console.log(finalGroups);
