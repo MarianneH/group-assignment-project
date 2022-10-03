@@ -1,4 +1,7 @@
 :root {
+  --background-color: rgb(235, 246, 231);
+  --primary-accent: #2f3e46;
+  --secondary-accent: #ffed78;
 }
 
 * {
@@ -7,5 +10,87 @@
   padding: 0;
 }
 
+body {
+  background-color: var(--background-color);
+  font-size: 18px;
+  padding: 5%;
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin: 16px;
+  color: var(--primary-accent);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-accent);
+}
+#description {
+  text-align: center;
+  margin: 16px;
+  margin-bottom: 64px;
+}
+#shuffleGroup {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+.field-hl {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-accent);
+  font-weight: bolder;
+}
+.input-field {
+  border-radius: 5px;
+  border-width: 0.5px;
+  margin-top: 8px;
+  padding: 8px;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 16px;
+}
 #allNames {
+  height: 25vh;
+}
+#shuffleButton {
+  border: none;
+  border-radius: 50px;
+  background-color: var(--primary-accent);
+  color: var(--background-color);
+  font-size: 16px;
+  padding: 16px 32px;
+  box-shadow: 2px 2px 4px black;
+  margin-top: 32px;
+  align-self: center;
+  margin-bottom: 32px;
+}
+.group-assignment {
+  width: 90%;
+}
+.group-container {
+  background-color: white;
+  border-top: 4px solid var(--secondary-accent);
+  text-align: center;
+  margin: 32px;
+  box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
+  padding: 8px;
+  border-radius: 2px;
+}
+.group-number {
+  margin-bottom: 8px;
+  margin-top: 32px;
+  color: var(--primary-accent);
+  font-size: 24px;
+}
+.new-groups {
+  width: 85vw;
+  max-width: 600px;
+  color: grey;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .group-assignment {
+    grid-template-columns: 1fr 1fr;
+  }
 }
