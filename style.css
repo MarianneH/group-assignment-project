@@ -11,13 +11,14 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
   font-size: 18px;
   padding: 5%;
   font-family: "Inter Tight", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
 }
 h1 {
   margin: 16px;
@@ -30,6 +31,7 @@ h1 {
   text-align: center;
   margin: 16px;
   margin-bottom: 64px;
+  width: 85vw;
 }
 #shuffleGroup {
   display: flex;
@@ -87,10 +89,4 @@ h1 {
   max-width: 600px;
   color: grey;
   margin-bottom: 32px;
-}
-
-@media screen and (min-width: 768px) {
-  .group-assignment {
-    grid-template-columns: 1fr 1fr;
-  }
 }

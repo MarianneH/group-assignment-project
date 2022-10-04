@@ -91,6 +91,10 @@ shuffleButton.addEventListener("click", function (e) {
   e.preventDefault();
   errorOut = 0;
   makeContainers();
+
+  document
+    .querySelector("#group-assignment")
+    .scrollIntoView({ behavior: "smooth" });
 });
 
 // removes everything added by program (this is important for using the program multiple times)
